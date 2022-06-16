@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {{ item.name }} - POF{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="title">
+            <img src="{% static 'pof/img/img3.png' %}" alt="title_image" class="title_image">
+        </div>
+        <div class="menu">
+            <div class="guide">
+                <img src="{{ item.image.url }}" alt="">
+                <div class="guide_info">
+                    <div class="guide_title">
+                        {{ item.name }}
+                    </div>
+                    <p class="text">
+                        {{ item.description }}
+                    </p>
+                </div>
+            </div> 
+            <div class="box">
+                <div class="type_name"> Параметры:</div>
+                {% if item.item_type %}<div class="parametr"><p> Тип предмета: </p> {{ item.item_type.name }} </div>{% endif %}
+                {% if item.health %}<div class="parametr"><p> Здоровье: </p> {{ item.health }} HP</div>{% endif %}
+                {% if item.size %}<div class="parametr"><p> Размер на карте: </p> {{ item.size }} </div>{% endif %}
+                {% if item.storage_size %}<div class="parametr"><p> Размер внутреннего хранилища: </p> {{ item.storage_size }} </div>{% endif %}
+                {% if item.bonus_inventory_size %}<div class="parametr"><p> Бонус размера инвернторя: </p> {{ item.bonus_inventory_size }} </div>{% endif %}
+                {% if item.stack_size %}<div class="parametr"><p> Размер пачки: </p> {{ item.stack_size }} </div>{% endif %}
+                {% if item.calorific_value %}<div class="parametr"><p> Теплотворность: </p> {{ item.calorific_value }} </div>{% endif %}
+                {% if item.min_power_cons %}<div class="parametr"><p> Минимальное потребление энергии: </p> {{ item.min_power_cons }} </div>{% endif %}
+                {% if item.power_consumption %}<div class="parametr"><p> Потребление энергии: </p> {{ item.power_consumption }} </div>{% endif %}
+            </div>
+            {% if item.linked.getters.all|length > 0 %}
+            <div class="box">
+                <div class="type_name"> Этот предмет можно добыть с помощью:</div>
+                <div class="list">
+                    {% for link in item.linked.getters.all %}
+                        <div class="card">
+                            {% if link.image %}<img src="{{ link.image.url }}" alt="image">{% endif %}
+                            <a href="{% url 'item_detail' link.pk %}"><div class="item_name">{{ link.name }}</div></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            {% if item.recipes.all|length > 0 %}
+            <div class="box">
+                <div class="type_name"> Рецепты:</div>
+                {% for recipe in item.recipes.all %}
+                    <div class="recipe">
+                        {% if recipe.ingredients.all|length > 0 %}
+                        {% for ingredient in recipe.ingredients.all %}
+                        <div class="sign">{{ ingredient.value }}</div>
+                        <div class="card">
+                            {% if ingredient.item.image %}<img src="{{ ingredient.item.image.url }}" alt="image">{% endif %}
+                            <a href="{% url 'item_detail' ingredient.item.pk %}"><div class="item_name">{{ ingredient.item.name }}</div></a>
+                        </div>
+                        {% if forloop.counter < recipe.ingredients.all|length %} <div class="sign plus">+</div> {% endif %}
+                        {% endfor %}
+                        <div class="sign">=</div>
+                        {% if recipe.ingredients_result > 1 %}<div class="sign">{{ recipe.ingredients_result }}</div>{% endif %}
+                        <div class="card">
+                            {% if item.image %}<img src="{{ item.image.url }}" alt="image">{% endif %}
+                            <a href="{% url 'item_detail' item.pk %}"><div class="item_name">{{ item.name }}</div></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% if forloop.counter < item.recipes.all|length %} <div class="line"></div> {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="box">
+                <div class="type_name"> Этот предмет можно сделать в:</div>
+                <div class="list">
+                    {% for link in item.linked.craft.all %}
+                        <div class="card">
+                            {% if link.image %}<img src="{{ link.image.url }}" alt="image">{% endif %}
+                            <a href="{% url 'item_detail' link.pk %}"><div class="item_name">{{ link.name }}</div></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% if item.linked.add_equipment.all|length > 0 %}
+            <div class="box">
+                <div class="type_name"> Этот предмет совместим с:</div>
+                <div class="list">
+                    {% for link in item.linked.add_equipment.all %}
+                        <div class="card">
+                            {% if link.image %}<img src="{{ link.image.url }}" alt="image">{% endif %}
+                            <a href="{% url 'item_detail' link.pk %}"><div class="item_name">{{ link.name }}</div></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}    
+        </div>
+    </div>
+
+{% endblock %}

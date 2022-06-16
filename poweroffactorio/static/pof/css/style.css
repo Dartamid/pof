@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.line {
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+body {
+    background:
+        #c7b39b 
+        url(../img/background.jpg)  
+        repeat;
+    padding: 0 2%; 
+    width: 100%;
+}
+
+.container {
+    margin: 25px auto;
+    background-color: rgba(50, 47, 42, 0.7);
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.header {
+    width: 100%;
+
+    background-color: rgba(50, 47, 42, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 1% 1%;
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 2px #000;
+}
+
+.logo {
+    padding: 0;
+    font-size: 50px;
+    font-weight: bold;
+    color: #DE8520;
+    text-shadow: 0px 0px 3px black;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    padding: 10px 20px;
+    color: #DE8520;
+    background-color: rgb(56, 50, 41, 0.72);
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #000;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.title {
+    width: 100%;
+    background-color: rgba(50, 47, 42, 0.9);
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 2px #000;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+}
+
+.title_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.menu {
+    width: 100%;
+    background-color: rgba(50, 47, 42, 0.9);
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 2px #000;
+    padding: 30px 10px;
+}
+
+.menu_title {
+    text-align: center;
+    padding: 0 20px;
+    font-size: 50px;
+    color: #DE8520;
+    text-shadow: 0px 0px 20px black;
+    margin-bottom: 15px;
+}
+
+.menu_links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu .btn {
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 0;
+    align-items: center;
+    color: #DE8520;
+    margin: 0 10px;
+}
+
+.box {
+    margin-top: 20px;
+    width: 100%;
+    background-color: rgba(50, 47, 42, 0.9);
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 2px #000;
+}
+
+.name {
+    text-align: center;
+    font-size: 50px;
+    color: #DE8520;
+    text-shadow: 0px 0px 3px black;
+    width: 100%;
+    background-color: rgba(50, 47, 42, 0.9);
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.text {
+    margin: 15px;
+    color: hsl(0, 0%, 76%);
+    text-indent: 40px;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.teammate {
+    width: 40%;
+    background-color: rgba(50, 47, 42, 0.9);
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 2px #000;
+    margin: 20px;
+    padding: 20px;
+}
+
+.teammate img {
+    box-shadow: 0px 0px 4px #000;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.nickname {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #DE8520;
+}
+
+.role {
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+    color: #DE8520;
+}
+
+.guide {
+    position: relative;
+    display: flex;
+    background-color: rgb(56, 50, 41, 0.72);
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #000;
+    padding: 20px;
+    margin: 0px 20px;
+}
+
+.guide img {
+    width: 30%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #000;
+    background-color: darkgrey;
+}
+
+.guide_title {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: #DE8520;
+}
+
+.guide_info {
+    width: 70%;
+    padding: 0px 20px;
+}
+
+.paragraph {
+    padding: 20px;
+    margin: 10px 20px;
+    align-items: center;
+
+}
+
+.paragraph img {
+    width: 70%;
+    margin: 0 15%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #000;
+}
+
+.paragraph_title {
+    font-size: 25px;
+    font-weight: 500;
+    color: #DE8520;
+    text-indent: 5%;
+}
+
+.type_name {
+    align-items: center;
+    padding: 6px 7px;
+    font-size: 30px;
+    color: #DE8520;
+    text-shadow: 0px 0px 3px black;
+    width: 100%;
+    background-color: rgba(50, 47, 42, 0.9);
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.card {
+    background-color: rgba(50, 47, 42, 0.9);
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 2px #000;
+    width: 12%;
+    padding: 10px;
+    margin: 20px 10px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.item_name {
+    align-items: center;
+    color: #DE8520;
+    text-align: center;
+    width: 100%;
+}
+
+.parametr {
+    display: flex;
+    color: hsl(0, 0%, 76%);
+    margin: 10px;
+}
+
+.parametr p {
+    color: #DE8520;
+    margin-right: 7px;
+}
+
+.recipe {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.sign {
+    color: #DE8520;
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+}
+
+.plus {
+    margin: 0 10px;
+}
+
+@media (max-width:842px){
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        height: 130px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: spac;
+    }
+
+    .link {
+        width: 100%;
+        margin: 0;
+    }
+
+    .guide {
+        flex-wrap: wrap;
+    }
+
+    .guide img {
+        width: 100%;
+    }
+
+    .guide_info {
+        padding: 20px 10px;
+        width: 100%;
+    }
+
+    .card {
+        width: 20%;
+    }
+
+    .paragraph img {
+        width: 100%;
+        margin: 0;
+    }
+}
+@media (max-width: 500px){
+    .teammate {
+        width: 80%;
+    }
+}

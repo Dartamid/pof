@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {{ guide.name }} {% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="title">
+            <img src="{{ guide.image.url }}" alt="" class="title_image">
+        </div>
+        <div class="menu">
+            <h3 class="menu_title">{{ guide.name }}</h3>
+            <div class="guides_list">
+                {% for paragraph in guide.paragraphs.all %}
+                <div class="paragraph">
+                    <div class="paragraph_title">
+                        {{ paragraph.title }}:
+                    </div>
+                    <p class="text">
+                        {{ paragraph.text | safe}}
+                    </p>
+                    {% if paragraph.image %}<img src="{{ paragraph.image.url }}" alt="">{% endif %}
+                </div>
+                {% if forloop.counter != guide.paragraphs.all|length %}
+                    <div class="line"></div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

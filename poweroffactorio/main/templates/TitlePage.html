@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Главная {% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="title">
+            <img src="{% static 'pof/img/img3.png' %}" alt="title_image" class="title_image">
+        </div>
+        <div class="menu">
+            <h3 class="menu_title">Меню</h3>
+            <div class="menu_links">
+                <a href="{% url 'guides_list' %}" class='menu btn'>Гайды</a>
+                <a href="{% url 'items_list' %}" class='menu btn'>Справочник</a>
+                <a href="{% url 'about-us' %}" class='menu btn'>О нас</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

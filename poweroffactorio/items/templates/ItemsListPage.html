@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Справочник {% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="title">
+            <img src="{% static 'pof/img/img4.jpeg' %}" alt="title_image" class="title_image">
+        </div>
+        <div class="menu">
+            <h3 class="menu_title">Справочник предметов</h3>
+            {% for itemtype in itemtypes %}
+            <div class="box">
+                <div class="type_name">{{ itemtype.name_plural }}</div>
+                <div class="list">
+                    {% for item in itemtype.items.all %}
+                        <div class="card">
+                            {% if item.image %}<img src="{{ item.image.url }}" alt="image">{% endif %}
+                            <a href="{% url 'item_detail' item.pk %}"><div class="item_name">{{ item.name }}</div></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

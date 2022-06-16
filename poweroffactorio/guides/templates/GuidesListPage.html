@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Гайды {% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="title">
+            <img src="{% static 'pof/img/img2.png' %}" alt="" class="title_image">
+        </div>
+        <div class="menu">
+            <h3 class="menu_title">Гайды</h3>
+            <div class="guides_list">
+                {% for guide in guides%}
+                <a href="{% url 'guide_detail' guide.pk %}">
+                    <div class="guide">
+                        <img src="{{ guide.image.url }}" alt="">
+                        <div class="guide_info">
+                            <div class="guide_title">
+                                {{ guide.name }}
+                            </div>
+                            <p class="text">
+                                {{ guide.description }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
