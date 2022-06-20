@@ -207,6 +207,7 @@ body {
     box-shadow: 0px 0px 2px #000;
     padding: 20px;
     margin: 0px 20px;
+    flex: 1 1 auto;
 }
 
 .guide img {
@@ -238,7 +239,7 @@ body {
 
 .paragraph img {
     width: 70%;
-    margin: 0 15%;
+    margin: 10px 15%;
     border: 1px solid #000;
     border-radius: 5px;
     box-shadow: 0px 0px 2px #000;
