@@ -15,7 +15,7 @@
                     {% for item in itemtype.items.all %}
                         <div class="card">
                             {% if item.image %}<img src="{{ item.image.url }}" alt="image">{% endif %}
-                            <a href="{% url 'item_detail' item.pk %}"><div class="item_name">{{ item.name }}</div></a>
+                            <a href="{% url 'item_detail' item.pk %}" class="item_name">{{ item.name }}</a>
                         </div>
                     {% endfor %}
                 </div>

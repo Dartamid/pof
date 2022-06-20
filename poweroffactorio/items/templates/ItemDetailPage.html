@@ -69,6 +69,7 @@
                 {% endfor %}
             </div>
             {% endif %}
+            {% if item.linked.craft.all|length > 0 %}
             <div class="box">
                 <div class="type_name"> Этот предмет можно сделать в:</div>
                 <div class="list">
@@ -80,6 +81,7 @@
                     {% endfor %}
                 </div>
             </div>
+            {% endif %}
             {% if item.linked.add_equipment.all|length > 0 %}
             <div class="box">
                 <div class="type_name"> Этот предмет совместим с:</div>
