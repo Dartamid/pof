@@ -95,6 +95,21 @@
                     {% endfor %}
                 </div>
             </div>
+            {% endif %}
+            {% if item.requiredFor.all|length > 0 %}
+            <div class="box">
+                <div class="type_name"> Используется в создании:</div>
+                <div class="list">
+                    {% for ingredient in item.requiredFor.all %}
+                        {% for recipe in ingredient.needfor.all %}
+                            <div class="card">
+                                {% if recipe.owner.image %}<img src="{{ recipe.owner.image.url }}" alt="image">{% endif %}
+                                <a href="{% url 'item_detail' recipe.owner.pk %}"><div class="item_name">{{ recipe.owner.name }}</div></a>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
             {% endif %}    
         </div>
     </div>
