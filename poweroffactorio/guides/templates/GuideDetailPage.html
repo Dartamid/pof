@@ -15,7 +15,7 @@
                         {{ paragraph.title }}:
                     </div>
                     <p class="text">
-                        {{ paragraph.text | safe}}
+                        {{ paragraph.text|linebreaksbr }}
                     </p>
                     {% if paragraph.image %}<img src="{{ paragraph.image.url }}" alt="">{% endif %}
                 </div>
