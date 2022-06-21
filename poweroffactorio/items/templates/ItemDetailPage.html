@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} {{ item.name }} - POF{% endblock %}
+{% block title %} {{ item.name }} {% endblock %}
 {% block content %}
     <div class="content">
         <div class="title">
@@ -22,11 +22,12 @@
                 <div class="type_name"> Параметры:</div>
                 {% if item.item_type %}<div class="parametr"><p> Тип предмета: </p> {{ item.item_type.name }} </div>{% endif %}
                 {% if item.health %}<div class="parametr"><p> Здоровье: </p> {{ item.health }} HP</div>{% endif %}
+                {% if item.crafting_time %}<div class="parametr"><p> Время создания предмета: </p> {{ item.crafting_time }} сек</div>{% endif %}
                 {% if item.size %}<div class="parametr"><p> Размер на карте: </p> {{ item.size }} </div>{% endif %}
                 {% if item.storage_size %}<div class="parametr"><p> Размер внутреннего хранилища: </p> {{ item.storage_size }} </div>{% endif %}
-                {% if item.bonus_inventory_size %}<div class="parametr"><p> Бонус размера инвернторя: </p> {{ item.bonus_inventory_size }} </div>{% endif %}
-                {% if item.stack_size %}<div class="parametr"><p> Размер пачки: </p> {{ item.stack_size }} </div>{% endif %}
-                {% if item.calorific_value %}<div class="parametr"><p> Теплотворность: </p> {{ item.calorific_value }} </div>{% endif %}
+                {% if item.bonus_inventory_size %}<div class="parametr"><p> Бонус размера инвернторя: </p> {{ item.bonus_inventory_size }} ячеек</div>{% endif %}
+                {% if item.stack_size %}<div class="parametr"><p> Размер пачки: </p> {{ item.stack_size }} шт. </div>{% endif %}
+                {% if item.calorific_value %}<div class="parametr"><p> Теплотворность: </p> {{ item.calorific_value }} МДж</div>{% endif %}
                 {% if item.min_power_cons %}<div class="parametr"><p> Минимальное потребление энергии: </p> {{ item.min_power_cons }} </div>{% endif %}
                 {% if item.power_consumption %}<div class="parametr"><p> Потребление энергии: </p> {{ item.power_consumption }} </div>{% endif %}
             </div>
@@ -45,7 +46,7 @@
             {% endif %}
             {% if item.recipes.all|length > 0 %}
             <div class="box">
-                <div class="type_name"> Рецепты:</div>
+                <div class="type_name">{% if item.recipes.all|length > 1 %} Рецепты: {% else %} Рецепт {% endif %}</div>
                 {% for recipe in item.recipes.all %}
                     <div class="recipe">
                         {% if recipe.ingredients.all|length > 0 %}

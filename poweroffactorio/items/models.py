@@ -109,7 +109,7 @@ class Item(models.Model):
         'Ручной крафт',
     )
     crafting_time = models.IntegerField(
-        'Время создания',
+        'Время создания предмета',
         blank=True, null=True,
     )
     stack_size = models.IntegerField(
