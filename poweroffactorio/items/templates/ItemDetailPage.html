@@ -31,6 +31,14 @@
                 {% if item.min_power_cons %}<div class="parametr"><p> Минимальное потребление энергии: </p> {{ item.min_power_cons }} </div>{% endif %}
                 {% if item.power_consumption %}<div class="parametr"><p> Потребление энергии: </p> {{ item.power_consumption }} </div>{% endif %}
             </div>
+            {% if item.requiredFor.all|length > 0 %}
+            <div class="box">
+                <div class="type_name">{% if item.effects.all|length > 1%} Эффекты: {% else %} Эффект: {% endif %}</div>
+                {% for effect in item.effects %}
+                <div class="parametr"><p> {{ effect.name }}: </p> {{ effect.value }} </div>
+                {% endfor %}
+            </div>
+            {% endif %} 
             {% if item.linked.getters.all|length > 0 %}
             <div class="box">
                 <div class="type_name"> Этот предмет можно добыть с помощью:</div>
