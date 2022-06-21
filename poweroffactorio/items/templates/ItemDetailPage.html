@@ -34,7 +34,7 @@
             {% if item.effects.all|length > 0 %}
             <div class="box">
                 <div class="type_name">{% if item.effects.all|length > 1%} Эффекты: {% else %} Эффект: {% endif %}</div>
-                {% for effect in item.effects %}
+                {% for effect in item.effects.all %}
                 <div class="parametr"><p> {{ effect.name }}: </p> {{ effect.value }} </div>
                 {% endfor %}
             </div>
