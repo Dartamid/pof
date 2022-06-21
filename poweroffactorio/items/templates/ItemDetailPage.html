@@ -51,7 +51,7 @@
                     <div class="recipe">
                         {% if recipe.ingredients.all|length > 0 %}
                         {% for ingredient in recipe.ingredients.all %}
-                        <div class="sign">{{ ingredient.value }}</div>
+                        {% if ingredient.value > 1 %}<div class="sign">{{ ingredient.value }}</div>{% endif %}
                         <div class="card">
                             {% if ingredient.item.image %}<img src="{{ ingredient.item.image.url }}" alt="image">{% endif %}
                             <a href="{% url 'item_detail' ingredient.item.pk %}"><div class="item_name">{{ ingredient.item.name }}</div></a>
