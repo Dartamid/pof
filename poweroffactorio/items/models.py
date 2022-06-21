@@ -116,9 +116,8 @@ class Item(models.Model):
         'Размер пачки',
         blank=True, null=True,
     )
-    description = models.CharField(
+    description = models.TextField(
         'Описание',
-        max_length=2000,
         blank=True, null=True,
     )
     effects = models.ManyToManyField(
