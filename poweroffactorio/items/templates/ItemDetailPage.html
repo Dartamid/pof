@@ -68,7 +68,7 @@
                         {% if forloop.counter < recipe.ingredients.all|length %} <div class="sign plus">+</div> {% endif %}
                         {% endfor %}
                         <div class="sign">=</div>
-                        {% if recipe.ingredients_result > 1 %}<div class="sign">{{ recipe.ingredients_result }}</div>{% endif %}
+                        <div class="sign">{{ recipe.ingredients_result }}</div>
                         <div class="card">
                             {% if item.image %}<img src="{{ item.image.url }}" alt="image">{% endif %}
                             <a href="{% url 'item_detail' item.pk %}"><div class="item_name">{{ item.name }}</div></a>
