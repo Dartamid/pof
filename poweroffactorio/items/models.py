@@ -51,6 +51,7 @@ class Effect(models.Model):
     class Meta:
         verbose_name = 'Эффект'
         verbose_name_plural = 'Эффекты'
+        ordering = ['name', 'value']
 
     def __str__(self):
         return self.name + self.value
