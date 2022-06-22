@@ -129,6 +129,7 @@ class Item(models.Model):
     class Meta:
         verbose_name = 'Предмет'
         verbose_name_plural = 'Предметы'
+        ordering = ['name',]
 
     def __str__(self):
         return self.name
@@ -149,6 +150,7 @@ class Ingredient(models.Model):
     class Meta:
         verbose_name = 'Ингредиент'
         verbose_name_plural = 'Ингредиенты'
+        ordering = ['item', 'value']
 
     def __str__(self):
         return self.item.name + ' ' + self.value
