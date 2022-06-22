@@ -96,6 +96,10 @@ class Item(models.Model):
     Fuel = models.BooleanField(
         'Топливо',
     )
+    max_capacity = models.IntegerField(
+        'Максимальная пропускная способность',
+        blank=True, null=True,
+    )
     item_type = models.ForeignKey(
         ItemType,
         on_delete=DO_NOTHING,

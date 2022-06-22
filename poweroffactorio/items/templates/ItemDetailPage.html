@@ -23,6 +23,7 @@
                 {% if item.item_type %}<div class="parametr"><p> Тип предмета: </p> {{ item.item_type.name }} </div>{% endif %}
                 {% if item.health %}<div class="parametr"><p> Здоровье: </p> {{ item.health }} HP</div>{% endif %}
                 {% if item.crafting_time %}<div class="parametr"><p> Время создания предмета: </p> {{ item.crafting_time }} сек</div>{% endif %}
+                {% if item.max_capacity %}<div class="parametr"><p> Максимальная пропускная способность: </p> {{ item.max_capacity }} пред/сек</div>{% endif %}
                 {% if item.size %}<div class="parametr"><p> Размер на карте: </p> {{ item.size }} </div>{% endif %}
                 {% if item.storage_size %}<div class="parametr"><p> Размер внутреннего хранилища: </p> {{ item.storage_size }} </div>{% endif %}
                 {% if item.bonus_inventory_size %}<div class="parametr"><p> Бонус размера инвернторя: </p> {{ item.bonus_inventory_size }} ячеек</div>{% endif %}
